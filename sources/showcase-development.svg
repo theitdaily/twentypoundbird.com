@@ -1,0 +1,24 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Development placeholder image">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#23154b"/>
+      <stop offset="100%" stop-color="#0b1125"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <g stroke="#9c7bff" stroke-opacity="0.5" fill="none">
+    <rect x="140" y="140" width="920" height="420" rx="24"/>
+    <rect x="190" y="195" width="350" height="250" rx="16"/>
+    <rect x="580" y="195" width="430" height="95" rx="16"/>
+    <rect x="580" y="315" width="430" height="130" rx="16"/>
+  </g>
+  <g fill="#d2c2ff" fill-opacity="0.24">
+    <rect x="220" y="235" width="290" height="16" rx="8"/>
+    <rect x="220" y="268" width="240" height="16" rx="8"/>
+    <rect x="220" y="301" width="260" height="16" rx="8"/>
+    <rect x="220" y="334" width="210" height="16" rx="8"/>
+    <rect x="610" y="225" width="220" height="18" rx="8"/>
+    <rect x="610" y="345" width="320" height="18" rx="8"/>
+  </g>
+  <text x="600" y="545" text-anchor="middle" fill="#d6cbff" font-family="Manrope, Arial, sans-serif" font-size="34">Placeholder: Development Team Photo</text>
+</svg>
