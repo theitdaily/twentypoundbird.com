@@ -82,6 +82,7 @@ section[id] { scroll-margin-top: var(--anchor-offset); }
 .team-cards .team-card {
   flex: 0 0 var(--team-card-width);
   margin-inline: 0;
+  scroll-margin-top: calc(var(--anchor-offset) / 2);
 }
 .team-card {
   background: linear-gradient(160deg, rgba(255,255,255,.1), rgba(255,255,255,.03));
@@ -183,13 +184,18 @@ section[id] { scroll-margin-top: var(--anchor-offset); }
 }
 .showcase-link:hover { text-decoration: none; background: rgba(110,244,255,.15); }
 .site-footer { display: flex; gap: 16px; flex-wrap: wrap; margin: 40px 0 32px; color: var(--muted); justify-content: center; text-align: center; }
+.footer-disclaimer { width: 100%; margin: 4px 0 0; color: var(--muted); font-size: .95rem; }
 .site-footer.reveal { transition-duration: 1s; }
 .copyright { width: 100%; margin: 6px 0 0; color: var(--muted); }
 
-.cookie-banner { position: fixed; bottom: 12px; right: 12px; max-width: 420px; padding: 14px; border-radius: 14px; background: #121d3c; border: 1px solid rgba(255,255,255,.2); }
+.cookie-banner { position: fixed; left: 50%; transform: translateX(-50%); bottom: 12px; width: min(680px, calc(100% - 24px)); max-width: 680px; padding: 14px; border-radius: 14px; background: #121d3c; border: 1px solid rgba(255,255,255,.2); z-index: 30; }
 .cookie-banner button { background: linear-gradient(90deg, var(--accent2), var(--accent)); border: 0; padding: 8px 12px; border-radius: 8px; margin-right: 8px; cursor: pointer; }
 .cookie-banner .ghost { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,.3); }
 .doc-container { max-width: 900px; margin: 48px auto; padding: 24px; }
+.doc-container h2 { margin: 26px 0 10px; text-align: left; }
+.doc-container ul { margin: 8px 0 14px 20px; }
+.doc-container li { margin: 5px 0; }
+.doc-container hr { border: 0; border-top: 1px solid rgba(255,255,255,.18); margin: 22px 0; }
 .back-link { display: inline-block; margin-bottom: 12px; }
 .reveal { opacity: 0; transform: translate3d(0, 14px, 0) scale(.995); transition: opacity .85s var(--easing-smooth), transform .85s var(--easing-smooth); will-change: opacity, transform; }
 .reveal.visible { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
@@ -213,6 +219,7 @@ section[id] { scroll-margin-top: var(--anchor-offset); }
 @media (max-width: 760px) {
   .site-header { flex-wrap: wrap; justify-content: center; text-align: center; gap: 12px; }
   .site-header nav { width: 100%; justify-content: center; }
+  .logo { width: 45px; height: 45px; margin: -3px;}
   .lang-switch { width: 100%; margin-left: 0; justify-content: center; }
   .card { max-width: 210px; }
   .team-cards { --team-card-width: 210px; }

@@ -153,6 +153,7 @@
         <a href="/${lang}/docs/terms/">${t.legal.terms}</a>
         <a href="/${lang}/docs/privacy/">${t.legal.privacy}</a>
         <a href="/${lang}/docs/cookies/">${t.legal.cookies}</a>
+        <p class="footer-disclaimer">${t.footerDisclaimer}</p>
         <p class="copyright">© 2021–2026 Twenty Pound Bird</p>
       </footer>
       <div id="cookie-banner" class="cookie-banner hidden">
@@ -198,7 +199,12 @@
       <a href="/${lang}/" class="back-link">← Twenty Pound Bird</a>
       <div class="lang-switch docs">${languageSwitch()}</div>
       <h1>${doc.title}</h1>
-      ${doc.body.map((p) => `<p>${p}</p>`).join('')}
+      ${doc.body
+        .map((block) => {
+          if (typeof block === 'string' && block.trim().startsWith('<')) return block;
+          return `<p>${block}</p>`;
+        })
+        .join('')}
     `;
   }
 
