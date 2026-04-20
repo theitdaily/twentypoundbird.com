@@ -238,9 +238,29 @@
     return;
   }
 
-  const observer = new IntersectionObserver((entries) => {
+  const resumeRevealObservation = new WeakMap();
+  const observer = new IntersectionObserver((entries, currentObserver) => {
     entries.forEach((entry) => {
-      entry.target.classList.toggle('visible', entry.isIntersecting);
+      const existingTimer = resumeRevealObservation.get(entry.target);
+      if (existingTimer) {
+        window.clearTimeout(existingTimer);
+        resumeRevealObservation.delete(entry.target);
+      }
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        currentObserver.unobserve(entry.target);
+
+        const timerId = window.setTimeout(() => {
+          if (!entry.target.isConnected) return;
+          currentObserver.observe(entry.target);
+          resumeRevealObservation.delete(entry.target);
+        }, 1500);
+        resumeRevealObservation.set(entry.target, timerId);
+        return;
+      }
+
+      entry.target.classList.remove('visible');
     });
   }, { threshold: 0.09, rootMargin: '0px 0px 4% 0px' });
 
