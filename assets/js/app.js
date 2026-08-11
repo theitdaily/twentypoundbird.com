@@ -21,8 +21,8 @@
             .replaceAll("'", '&#39;');
     const linkifyText = (text) => {
         const escaped = escapeHtml(text);
-        const pattern = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,})|((?:https?:\/\/|www\.)[^\s<]+)|((?:github\.com\/)[A-Za-z0-9._/-]+)/gi;
-        return escaped.replace(pattern, (match, email, url, github) => {
+        const pattern = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,})|((?:https?:\/\/|www\.)[^\s<]+)|((?:github\.com\/)[A-Za-z0-9._/-]+)|((?:linkedin\.com\/)[A-Za-z0-9._/-]+)/gi;
+        return escaped.replace(pattern, (match, email, url, github, linkedin) => {
             if (email) return `<a href="mailto:${email}">${email}</a>`;
             if (url) {
                 const trailing = url.match(/[.,!?;:]+$/)?.[0] ?? '';
@@ -37,6 +37,12 @@
             if (github) {
                 const trailing = github.match(/[.,!?;:]+$/)?.[0] ?? '';
                 const cleanUrl = github.replace(/[.,!?;:]+$/, '');
+
+                return `<a href="https://${cleanUrl}" target="_blank" rel="noopener noreferrer">${cleanUrl}</a>${trailing}`;
+            }
+            if (linkedin) {
+                const trailing = linkedin.match(/[.,!?;:]+$/)?.[0] ?? '';
+                const cleanUrl = linkedin.replace(/[.,!?;:]+$/, '');
 
                 return `<a href="https://${cleanUrl}" target="_blank" rel="noopener noreferrer">${cleanUrl}</a>${trailing}`;
             }
