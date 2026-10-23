@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AllAboutMe — Privacy Policy | Twenty Pound Bird</title>
-    <meta name="description" content="Privacy Policy for the AllAboutMe Android app by TwentyPoundBird, including local data, optional Google account authorization, and Google Drive backups." />
+    <meta name="description" content="Privacy Policy for the AllAboutMe Android app by TwentyPoundBird, including local data and manual backup files saved through the Android system file picker." />
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="AllAboutMe — Privacy Policy" />
-    <meta property="og:description" content="How AllAboutMe handles local records, optional Google account access, and Google Drive backups. Updated October 23, 2026." />
+    <meta property="og:description" content="How AllAboutMe handles local records and user-controlled backups saved via Android. Updated October 23, 2026." />
     <meta property="og:url" content="https://twentypoundbird.com/en/docs/allaboutme-privacy/" />
     <meta property="og:image" content="https://twentypoundbird.com/sources/twenty_pound_bird_logo_white.svg" />
     <link rel="canonical" href="https://twentypoundbird.com/en/docs/allaboutme-privacy/" />
@@ -22,84 +22,75 @@
       <p><strong>Developer / operator:</strong> TwentyPoundBird</p>
       <p><strong>Privacy / support contact:</strong> <a href="mailto:feedback.tpb+allaboutme@gmail.com">feedback.tpb+allaboutme@gmail.com</a></p>
       <p><strong>Effective date / last updated:</strong> October 23, 2026</p>
-      <p>This policy applies to the AllAboutMe Android application, not to the Twenty Pound Bird website in general. AllAboutMe is primarily an offline personal organizer. Its optional Google Drive backup feature uses Google account authorization only when you choose to connect an account. You can use the app's core features without a Google account.</p>
+      <p>This policy describes the current version of the AllAboutMe Android app. AllAboutMe is primarily an offline personal organizer. You do not need an AllAboutMe account or Google sign-in to use it. Manual file-based backup and restore are available; automatic backup and direct Google Drive API integration are not available in this version.</p>
 
       <hr />
       <section aria-labelledby="what-the-app-does">
-        <h2 id="what-the-app-does">1. What the app does</h2>
-        <p>AllAboutMe helps you organize information about yourself and other people, including profiles, contact details, interests and preferences, notes, custom fields, organizations, relationships, events and profile photos. Some information you enter may concern people other than you.</p>
+        <h2 id="what-the-app-does">1. What AllAboutMe does</h2>
+        <p>AllAboutMe helps you organize profiles and contact information, interests and preferences, custom fields, personal notes, organizations and relationships, events and profile photos. You decide which information to enter. Some records may contain information about other people.</p>
       </section>
 
       <hr />
-      <section aria-labelledby="information-you-enter">
-        <h2 id="information-you-enter">2. Information stored on your device</h2>
-        <p>The records you create are stored in the app's private storage on your Android device. When you select a profile picture, AllAboutMe uses the Android system photo picker and stores a processed copy in its private storage. The app does not automatically read your device contacts, text messages or call history.</p>
-        <p>Your records are not automatically synchronized to TwentyPoundBird. The app does not require registration with us, and it does not include third-party advertising or in-app analytics.</p>
+      <section aria-labelledby="local-information">
+        <h2 id="local-information">2. Information stored on your device</h2>
+        <p>Your records and photos are stored in the app's private storage on your Android device. When you select a profile photo, the app uses the Android system photo picker and stores a processed copy locally. AllAboutMe does not automatically read your phone's contacts, SMS messages or call logs.</p>
+        <p>AllAboutMe does not require an account with TwentyPoundBird. It does not automatically synchronize your records with our servers and does not include third-party advertising or analytics. Our company does not receive your local profile database.</p>
       </section>
 
       <hr />
-      <section aria-labelledby="local-backups">
-        <h2 id="local-backups">3. Local backup and restore</h2>
-        <p>You can manually export an AllAboutMe backup to a location that you choose through Android's system file picker, and you can restore records from a backup file you select. The backup may include your app records, relationship and event history, custom fields, and saved profile photos. A restore replaces the relevant existing data in the app after your confirmation.</p>
-        <p>Local backup files are not automatically encrypted with an AllAboutMe password. You can optionally enable password protection when creating a backup. Without it, a person who obtains a copy of the file may be able to read its contents. Storage providers or other apps you choose to save the file with may apply their own privacy and security policies.</p>
+      <section aria-labelledby="manual-backup">
+        <h2 id="manual-backup">3. Manual backup and restore using Android</h2>
+        <p>When you choose “Save to file”, AllAboutMe prepares a backup archive and opens Android's system file picker (the Storage Access Framework, or SAF). <strong>You choose the location</strong> where the file will be saved. Depending on the storage providers installed on your device, this may be device storage, Google Drive, or another provider. AllAboutMe writes only to the document location selected through the system picker. It does not request Google Drive OAuth permissions or directly call the Google Drive API.</p>
+        <p>You can restore a backup by choosing a file through the same Android system picker. The app reads the file you select, validates it, shows a preview, and restores records only after you confirm that existing local data will be replaced. A backup may contain profiles, names and contact details, notes, custom fields, preferences, organizations, relationships, events and saved profile photos.</p>
+        <p>These actions are manual. AllAboutMe does not automatically upload, schedule, synchronize, browse or delete your files in Google Drive or another external storage provider. The “Automatic backup” area in the app is currently unavailable.</p>
       </section>
 
       <hr />
-      <section aria-labelledby="google-authorization">
-        <h2 id="google-authorization">4. Optional Google account authorization</h2>
-        <p>To use cloud backup, you select a Google account and authorize AllAboutMe through Google's authorization services. The app requests only the Google Drive permission <code>https://www.googleapis.com/auth/drive.appdata</code>, which allows it to manage files in the hidden, app-specific Google Drive application data folder (<code>appDataFolder</code>). This permission does not grant access to your other Google Drive files, Gmail, Google Contacts or Google account password.</p>
-        <p>AllAboutMe stores the selected Google account identifier (the account email address) in its private settings on your device so it can display and reuse your selection. Google authorization provides a temporary access token when needed for a Drive action; the app does not persist that token in its own storage. The account identifier and token are used to connect to the Google Drive API, not for advertising or profiling.</p>
-        <p>You can disconnect the Google account from AllAboutMe using the app's sign-out control, which requests revocation of the granted access and removes the saved account selection from the app. Disconnecting does not automatically delete backup files already stored in Google Drive.</p>
-      </section>
-
-      <hr />
-      <section aria-labelledby="google-drive-backups">
-        <h2 id="google-drive-backups">5. Google Drive cloud backups: data access and use</h2>
-        <p>Google Drive backup is optional and initiated by you. When you request it, AllAboutMe creates a backup containing its locally stored records and referenced profile photos and uploads the archive directly from your device to Google's servers over an encrypted HTTPS connection. The app can also list backup files and their metadata (such as file name, size and modification date), download a backup for restoration, and delete a backup when you request it. It may read your Google Drive storage quota to check that a backup can be uploaded.</p>
-        <p>Backup files are kept in the Google Drive <code>appDataFolder</code> associated with the Google account you selected. These files are not shown in the regular Google Drive file list and cannot be shared using normal Google Drive sharing controls. AllAboutMe's Drive access is limited to this app-specific folder; it does not read or modify unrelated files in your Drive.</p>
-        <p>There is no continuous or automatic cloud synchronization of your records. A backup is uploaded only when you explicitly create one. Downloading and restoring a backup, listing backups, and deleting them are also initiated from the app. A restoration transfers the selected archive from Google Drive to your device and replaces the relevant local records only after your confirmation.</p>
-      </section>
-
-      <hr />
-      <section aria-labelledby="sharing-and-third-parties">
-        <h2 id="sharing-and-third-parties">6. Google processing, sharing and advertising</h2>
-        <p>Google processes the account authorization and stores your cloud backup and associated file metadata when you choose to use Google Drive. Google's handling of that information is subject to the <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a> and applicable Google Drive terms.</p>
-        <p>TwentyPoundBird does not operate a server that receives your profile database or cloud backup files, and does not use Google API data to advertise to you, sell personal information, build marketing profiles or train general-purpose AI models. We do not transfer Google user data to data brokers, advertisers or other third parties. Data accessed through Google APIs is used only to provide the Google Drive backup, restore, listing and deletion features requested by you. Our use of information received from Google APIs follows the <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener noreferrer">Google API Services User Data Policy</a>, including its Limited Use requirements where applicable.</p>
-        <p>If you choose to email support, your email service sends the message to our support inbox. We can read the message and the information you voluntarily include in order to respond. Please avoid sending sensitive personal records unless necessary.</p>
+      <section aria-labelledby="external-storage">
+        <h2 id="external-storage">4. External storage providers, including Google Drive</h2>
+        <p>If you explicitly select Google Drive or another cloud provider in the Android picker, the provider may transfer and store your chosen backup file under its own terms and privacy policy. Any sign-in to that provider is managed by Android and the provider, not by an AllAboutMe Google sign-in feature. Which providers are available depends on your device and installed apps.</p>
+        <p>AllAboutMe does not obtain access to your Google account, Google Contacts, Gmail or unrelated Drive files. It does not receive Google OAuth tokens or read the list of files in your Drive. For Google's handling of files you choose to store there, see the <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a> and <a href="https://www.google.com/drive/terms-of-service/" rel="noopener noreferrer">Google Drive terms</a>.</p>
       </section>
 
       <hr />
       <section aria-labelledby="security">
-        <h2 id="security">7. Security of backups</h2>
-        <p>Cloud transfers use HTTPS/TLS, and Google applies its own protections to files stored in Google Drive. In addition, AllAboutMe offers <strong>optional password-based encryption</strong> of the backup archive before it is saved locally or uploaded to Drive. Password-protected archives use an encryption key derived from your password and AES-GCM encryption. This password is not sent to TwentyPoundBird.</p>
-        <p><strong>Important:</strong> If you create a backup without selecting password protection, AllAboutMe does not encrypt the contents of that archive separately before it is sent to Google Drive. Google's storage and transport protections still apply, but a person who obtains the unprotected archive may be able to read the information inside it. If you use a backup password, keep it safe: an encrypted backup cannot be restored without the correct password.</p>
+        <h2 id="security">5. Backup file security</h2>
+        <p>AllAboutMe provides <strong>optional password protection</strong> for manually exported backup files. Password-protected archives use password-based key derivation and AES-GCM encryption before the file is handed to the selected storage provider. The backup password is not sent to TwentyPoundBird; you must keep it because an encrypted backup cannot be restored without the correct password.</p>
+        <p><strong>Without a password, the exported backup archive is not additionally encrypted by AllAboutMe.</strong> Anyone who obtains the file may be able to read its contents. Device and cloud storage providers may offer their own encryption or access protections. We recommend protecting files that contain sensitive personal information.</p>
       </section>
 
       <hr />
-      <section aria-labelledby="retention-and-deletion">
-        <h2 id="retention-and-deletion">8. Retention, deletion and your choices</h2>
-        <p>Your local records remain on your device until you edit or delete them, remove the app's data, or uninstall the app. You can delete records individually or use the app's “Delete all data” option. Removing local data does <strong>not</strong> automatically remove backup files that you previously exported or uploaded to Google Drive.</p>
-        <p>Google Drive backup files remain in your chosen Google account until you delete them using AllAboutMe's backup-management controls, or remove the application's stored data through the applicable Google account/Drive controls. Disconnecting your Google account from the app or uninstalling the Android app does <strong>not</strong> by itself delete those cloud copies. Google's own retention practices also apply.</p>
-        <p>Any local backup file exported outside AllAboutMe must be deleted by you from the location where you saved it. You can use the app without connecting Google Drive. If you would like to ask about personal information you sent to support, contact us at the address below.</p>
+      <section aria-labelledby="sharing">
+        <h2 id="sharing">6. Sharing, support and advertising</h2>
+        <p>TwentyPoundBird does not receive or sell the information you store in the app, and does not use it for advertising, profiling or training general-purpose AI models. If you choose to export a backup, you determine which storage provider receives the file. The app does not automatically share your data with other users or services.</p>
+        <p>If you choose to contact support, the app opens your email application. We can read the email and any information you voluntarily send us in order to provide support. Your email provider's terms and privacy practices also apply; avoid attaching sensitive personal records unless necessary.</p>
       </section>
 
       <hr />
-      <section aria-labelledby="children-and-others">
-        <h2 id="children-and-others">9. Children and information about other people</h2>
-        <p>AllAboutMe may be used by children. Its core offline features do not require an account or submission of records to TwentyPoundBird. Use of the optional Google Drive feature depends on the selected Google account and any applicable age, parental supervision or account restrictions imposed by Google. Parents and guardians can help children decide what information to store or back up and can contact us with questions.</p>
-        <p>Because the app can hold information about other people, please only enter, back up or share information when you have an appropriate right or permission to do so. Avoid disclosing another person's sensitive information without permission.</p>
+      <section aria-labelledby="retention">
+        <h2 id="retention">7. Retention, deletion and existing backups</h2>
+        <p>Local records remain on your device until you modify or delete them, clear the app's data or uninstall it. You can delete individual entries or use the “Delete all data” function. Removing app data does not delete backup files that you previously saved through Android's system picker.</p>
+        <p>Files exported to device storage, Google Drive or other providers remain under your control in those locations. To remove a backup, delete it from the storage provider you selected. Uninstalling AllAboutMe does not automatically delete those exported files. Conversely, deleting a backup file does not delete the records currently stored in AllAboutMe.</p>
+        <p><strong>For users of earlier testing versions:</strong> Previous experimental Google Drive API backups in Drive's hidden app-data storage are separate from visible files saved through the system picker. The current version cannot list, restore or delete those older hidden copies. If applicable, review the account's connected-app or hidden app-data management settings; deleting hidden app data may remove all such backups. Export any needed backup with the earlier testing version before upgrading.</p>
       </section>
 
       <hr />
-      <section aria-labelledby="changes-to-policy">
-        <h2 id="changes-to-policy">10. Changes to this policy</h2>
-        <p>We may update this policy when AllAboutMe's features or data-handling practices change. The effective date above indicates the current version. If a change materially affects how we use Google user data, we will update the relevant disclosures and request consent when required before using that data for a newly disclosed purpose.</p>
+      <section aria-labelledby="children">
+        <h2 id="children">8. Children and information about other people</h2>
+        <p>AllAboutMe's offline features can be used without registration and may be used by children. Parents and guardians can help children decide what data to enter and where to save any exported copies. A third-party storage provider, including Google Drive, may impose account-age or parental-supervision requirements under its own rules.</p>
+        <p>Because the app allows you to record information about other people, please enter, export or share that information only when you have an appropriate right or permission to do so. Avoid disclosing another person's sensitive information without permission.</p>
+      </section>
+
+      <hr />
+      <section aria-labelledby="changes">
+        <h2 id="changes">9. Changes to this policy</h2>
+        <p>We may update this policy when AllAboutMe's functionality or data practices change. The effective date above identifies this version. If direct Google Drive API access or automatic cloud backup becomes available in a future release, this policy and any required Google Play disclosures will be updated before that feature is offered.</p>
       </section>
 
       <hr />
       <section aria-labelledby="contact">
-        <h2 id="contact">11. Contact</h2>
-        <p>For privacy questions, requests concerning messages you sent to support, or other assistance, email <a href="mailto:feedback.tpb+allaboutme@gmail.com">feedback.tpb+allaboutme@gmail.com</a>.</p>
+        <h2 id="contact">10. Contact</h2>
+        <p>For privacy questions or assistance, contact <a href="mailto:feedback.tpb+allaboutme@gmail.com">feedback.tpb+allaboutme@gmail.com</a>.</p>
       </section>
     </main>
   </body>
